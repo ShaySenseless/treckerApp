@@ -1,19 +1,57 @@
-<p id="notice"><%= notice %></p>
-
+<!-- Show auftrag details: -->
 <p>
-  <strong>Von:</strong>
+  <strong>Title:</strong>
   <%= @auftrag.von %>
 </p>
-
+ 
 <p>
-  <strong>Bis:</strong>
+  <strong>Text:</strong>
   <%= @auftrag.bis %>
 </p>
 
 <p>
-  <strong>Kunde:</strong>
-  <%= @auftrag.kunde %>
+  <strong>Text:</strong>
+  <%= @auftrag.kunde_id %>
 </p>
 
-<%= link_to 'Edit', edit_auftrag_path(@auftrag) %> |
-<%= link_to 'Back', auftrags_path %>
+<!-- Show personal index: -->
+<h2>Personal:</h2>
+<% @auftrag.personal.each do |p| %>
+  <p>
+    <strong>Mitarbeiter:</strong>
+    <%= p.mitarbeiter %>
+  </p>
+ 
+  <p>
+    <strong>Machine:</strong>
+    <%= p.machine %>
+  </p>
+
+  <p>
+    <strong>Leistung:</strong>
+    <%= p.leistung %>
+  </p>
+<% end %>
+
+<!-- Create personal: -->
+<h2>Personal editieren:</h2>
+<%= form_for([@auftrag, @auftrag.personal.build]) do |f| %>
+  <p>
+    <%= f.label :mitarbeiter %><br>
+    <%= f.text_field :mitarbeiter %>
+  </p>
+  <p>
+    <%= f.label :machine %><br>
+    <%= f.text_area :machine %>
+  </p>
+  <p>
+    <%= f.label :leistung %><br>
+    <%= f.text_area :leistung %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Back', auftrag_path %> |
+<%= link_to 'Edit', edit_auftrag_path(@auftrag) %>

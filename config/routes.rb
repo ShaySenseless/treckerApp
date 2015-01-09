@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :auftrags
+  resources :auftrags do
+    resources :personals
+  end
 
   resources :kundes
 

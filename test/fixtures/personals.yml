@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mitarbeiter: MyString
+  machine: MyString
+  leistung: MyString
+  auftrag_id: 
+
+two:
+  mitarbeiter: MyString
+  machine: MyString
+  leistung: MyString
+  auftrag_id: 
