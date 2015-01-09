@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kundes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vorname</th>
+      <th>Nachname</th>
+      <th>Handynummer</th>
+      <th>Festnetz</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kundes.each do |kunde| %>
+      <tr>
+        <td><%= kunde.vorname %></td>
+        <td><%= kunde.nachname %></td>
+        <td><%= kunde.handynummer %></td>
+        <td><%= kunde.festnetz %></td>
+        <td><%= kunde.email %></td>
+        <td><%= link_to 'Show', kunde %></td>
+        <td><%= link_to 'Edit', edit_kunde_path(kunde) %></td>
+        <td><%= link_to 'Destroy', kunde, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kunde', new_kunde_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  von: 2015-01-09
+  bis: 2015-01-09
+  kunde_id: 
+
+two:
+  von: 2015-01-09
+  bis: 2015-01-09
+  kunde_id: 

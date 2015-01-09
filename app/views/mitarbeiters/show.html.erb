@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vorname:</strong>
+  <%= @mitarbeiter.vorname %>
+</p>
+
+<p>
+  <strong>Nachname:</strong>
+  <%= @mitarbeiter.nachname %>
+</p>
+
+<p>
+  <strong>Handy:</strong>
+  <%= @mitarbeiter.handy %>
+</p>
+
+<p>
+  <strong>Festnetz:</strong>
+  <%= @mitarbeiter.festnetz %>
+</p>
+
+<p>
+  <strong>Az monat:</strong>
+  <%= @mitarbeiter.az_monat %>
+</p>
+
+<p>
+  <strong>Az konto:</strong>
+  <%= @mitarbeiter.az_konto %>
+</p>
+
+<%= link_to 'Edit', edit_mitarbeiter_path(@mitarbeiter) %> |
+<%= link_to 'Back', mitarbeiters_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@kunde) do |f| %>
+  <% if @kunde.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kunde.errors.count, "error") %> prohibited this kunde from being saved:</h2>
+
+      <ul>
+      <% @kunde.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vorname %><br>
+    <%= f.text_field :vorname %>
+  </div>
+  <div class="field">
+    <%= f.label :nachname %><br>
+    <%= f.text_field :nachname %>
+  </div>
+  <div class="field">
+    <%= f.label :handynummer %><br>
+    <%= f.text_field :handynummer %>
+  </div>
+  <div class="field">
+    <%= f.label :festnetz %><br>
+    <%= f.text_field :festnetz %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

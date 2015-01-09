@@ -1,0 +1,29 @@
+<%= form_for(@auftrag) do |f| %>
+  <% if @auftrag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@auftrag.errors.count, "error") %> prohibited this auftrag from being saved:</h2>
+
+      <ul>
+      <% @auftrag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :von %><br>
+    <%= f.date_select :von %>
+  </div>
+  <div class="field">
+    <%= f.label :bis %><br>
+    <%= f.date_select :bis %>
+  </div>
+  <div class="field">
+    <%= f.label :kunde_id %><br>
+    <%= f.text_field :kunde_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

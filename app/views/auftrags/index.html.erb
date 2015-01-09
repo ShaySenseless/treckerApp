@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Auftrags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Von</th>
+      <th>Bis</th>
+      <th>Kunde</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auftrags.each do |auftrag| %>
+      <tr>
+        <td><%= auftrag.von %></td>
+        <td><%= auftrag.bis %></td>
+        <td><%= auftrag.kunde %></td>
+        <td><%= link_to 'Show', auftrag %></td>
+        <td><%= link_to 'Edit', edit_auftrag_path(auftrag) %></td>
+        <td><%= link_to 'Destroy', auftrag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Auftrag', new_auftrag_path %>

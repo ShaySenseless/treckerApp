@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vorname: MyString
+  nachname: MyString
+  handy: MyString
+  festnetz: MyString
+  az_monat: 9.99
+  az_konto: 9.99
+
+two:
+  vorname: MyString
+  nachname: MyString
+  handy: MyString
+  festnetz: MyString
+  az_monat: 9.99
+  az_konto: 9.99

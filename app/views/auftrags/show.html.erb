@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Von:</strong>
+  <%= @auftrag.von %>
+</p>
+
+<p>
+  <strong>Bis:</strong>
+  <%= @auftrag.bis %>
+</p>
+
+<p>
+  <strong>Kunde:</strong>
+  <%= @auftrag.kunde %>
+</p>
+
+<%= link_to 'Edit', edit_auftrag_path(@auftrag) %> |
+<%= link_to 'Back', auftrags_path %>
