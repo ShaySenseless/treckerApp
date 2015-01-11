@@ -1,5 +1,6 @@
 class KundesController < ApplicationController
   before_action :set_kunde, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /kundes
   # GET /kundes.json

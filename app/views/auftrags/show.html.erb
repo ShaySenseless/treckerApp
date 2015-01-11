@@ -11,7 +11,7 @@
 
 <p>
   <strong>Text:</strong>
-  <%= @auftrag.kunde_id %>
+  <%= @auftrag.name %>
 </p>
 
 <!-- Show personal index: -->
@@ -36,19 +36,35 @@
 <!-- Create personal: -->
 <h2>Personal editieren:</h2>
 <%= form_for([@auftrag, @auftrag.personal.build]) do |f| %>
-  <p>
-    <%= f.label :mitarbeiter %><br>
-    <%= f.text_field :mitarbeiter %>
-  </p>
-  <p>
-    <%= f.label :machine %><br>
-    <%= f.text_area :machine %>
-  </p>
-  <p>
-    <%= f.label :leistung %><br>
-    <%= f.text_area :leistung %>
-  </p>
-  <p>
+
+  <div>
+  <%= f.label :mitarbeiter %><br>
+  <%= f.select :mitarbeiter,
+    Mitarbeiter.all.map { |u| [u.vorname, u.nachname] },
+                 { include_blank: true },
+                 { class: 'chosen-select' }
+  %>
+  </div>
+  <br>
+  <div>
+  <%= f.label :machine %><br>
+  <%= f.select :machine,
+    Machine.all.map { |u| [u.name] },
+                 { include_blank: true },
+                 { class: 'chosen-select' }
+  %>
+  </div>
+  <br>
+
+  <div>
+    <%= f.label :leitung %><br>
+    <%= f.select :leistung,
+    Leistung.all.map { |u| [u.name] },
+                 { include_blank: true },
+                 { class: 'chosen-select' }
+    %>
+  </div>
+  <br>
     <%= f.submit %>
   </p>
 <% end %>

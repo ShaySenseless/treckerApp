@@ -1,6 +1,7 @@
 class MachinesController < ApplicationController
   before_action :set_machine, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /machines
   # GET /machines.json
   def index

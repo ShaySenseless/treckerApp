@@ -2,12 +2,12 @@
 
 <h1>Listing Auftrags</h1>
 
-<table>
-  <thead>
+<table class="table table-bordered">
+  <thead style="color: white; background-color: #531">
     <tr>
       <th>Von</th>
       <th>Bis</th>
-      <th>Kunde</th>
+      <th>Kundename </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= auftrag.von %></td>
         <td><%= auftrag.bis %></td>
-        <td><%= auftrag.kunde %></td>
+        <td><%= auftrag.name %></td>
         <td><%= link_to 'Show', auftrag %></td>
         <td><%= link_to 'Edit', edit_auftrag_path(auftrag) %></td>
         <td><%= link_to 'Destroy', auftrag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Auftrag', new_auftrag_path %>
+<%= link_to 'New Auftrag', new_auftrag_path, class: "btn btn-warning" %>

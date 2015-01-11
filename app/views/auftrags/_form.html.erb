@@ -19,10 +19,16 @@
     <%= f.label :bis %><br>
     <%= f.date_select :bis %>
   </div>
-  <div class="field">
-    <%= f.label :kunde_id %><br>
-    <%= f.text_field :kunde_id %>
+  <br>
+  <div>
+  <%= f.select :name,
+    Kunde.all.map { |u| [u.vorname, u.nachname] },
+                 { include_blank: true },
+                 { class: 'chosen-select' }
+  %>
   </div>
+  <br>
+
   <div class="actions">
     <%= f.submit %>
   </div>

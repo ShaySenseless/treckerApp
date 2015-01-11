@@ -1,5 +1,6 @@
 class AuftragsController < ApplicationController
   before_action :set_auftrag, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /auftrags
   # GET /auftrags.json
@@ -69,6 +70,6 @@ class AuftragsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def auftrag_params
-      params.require(:auftrag).permit(:von, :bis, :kunde_id)
+      params.require(:auftrag).permit(:von, :bis, :kunde_id, :name)
     end
 end

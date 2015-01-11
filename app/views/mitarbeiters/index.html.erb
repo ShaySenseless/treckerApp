@@ -2,8 +2,8 @@
 
 <h1>Listing Mitarbeiters</h1>
 
-<table>
-  <thead>
+<table class="table table-bordered">
+  <thead style="color: white; background-color: #531">
     <tr>
       <th>Vorname</th>
       <th>Nachname</th>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Mitarbeiter', new_mitarbeiter_path %>
+<%= link_to 'New Mitarbeiter', new_mitarbeiter_path, class: "btn btn-warning" %>

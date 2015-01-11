@@ -1,5 +1,6 @@
 class LeistungsController < ApplicationController
   before_action :set_leistung, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /leistungs
   # GET /leistungs.json
